@@ -11,7 +11,7 @@
 
 - :student: This is a beginner-friendly fullstack application which uses Java Spring Boot and Thymeleaf.
 
-<img src="/src/main/resources/static/images/application-image.png" width="100%">
+<img src="/src/main/resources/static/image/application-image.png" width="100%">
 
 ## Technologies Used
 
