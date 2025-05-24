@@ -1,47 +1,110 @@
-# Spring Boot 3 Todo Planner Application
+<p align="center">👋 Hey! I'm Samuel Vitor, a brazilian programmer.</p>
+<p align="center"><a href="https://twitter.com/samuell_vitoorr"><img src="https://img.shields.io/badge/X-742273?style=for-the-badge&logoColor=F2F2F2&logo=twitter"/></a>
+<a href="https://www.linkedin.com/in/samuel-vitor-362713214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="https://img.shields.io/badge/linkedin-742273?style=for-the-badge&logoColor=F2F2F2&logo=linkedin"/></a>
+<a href="https://www.instagram.com/samuell_vitoorr?igsh=MXc0ZXViZGxuNWR3eA=="><img src="https://img.shields.io/badge/instagram-742273?style=for-the-badge&logoColor=F2F2F2&logo=instagram"/></a>
 
-This is a beginner friendly fullstack application which uses Java Spring Boot
-and Thymeleaf.
+<!-- RAINBOW LINE TOP -->
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
 
-![spring boot todo planner application](./screenshot.gif)
+<!-- ABOUT -->
+## **Spring Boot 3 Todo Planner Application:**
 
-This is an ENTIRE application for Java Spring Boot built using:
-- Spring Boot 3.2.1
-- Spring Data JPA
-- MySQL
-- Docker
-- Thymeleaf
+- :student: This is a beginner-friendly fullstack application which uses Java Spring Boot and Thymeleaf.
 
-**I walk through how to build this yourself on YouTube**: https://youtu.be/PEecMudMlVQ
+<img src="/src/main/resources/static/images/application-image.png" width="100%">
 
-## Development Instructions
+## Technologies Used
 
-- `git clone git@github.com:wazooinc/spring-boot-3-todo-planner-application.git`
-- `cd spring-boot-3-todo-planner-application`
-- open in favorite editor, or
-- `mvnw spring-boot:run`
-- open http://localhost:8080 and TODO away! Updated your TODO's with a lane!
+<details>
+  <summary>🧮 Backend</summary>
+  <div>
+    <samp>
+      <p align="left">
+        - Spring Boot 3.2.1
+        - Java 17
+        - Spring Data JPA
+        - MySQL
+      </p>
+    </samp>
+  </div>
+</details>
 
-## LICENSE
+<details>
+  <summary>🧮 Frontend</summary>
+  <div>
+    <samp>
+      <p align="left">
+        - Thymeleaf
+        - Bootstrap 5.3.0
+        - jQuery 3.7.1
+      </p>
+    </samp>
+  </div>
+</details>
 
-MIT License
+<details>
+  <summary>🧮 Development Tools</summary>
+  <div>
+    <samp>
+      <p align="left">
+        - Lombok
+        - Spring Boot DevTools
+        - Docker Compose
+      </p>
+    </samp>
+  </div>
+</details>
 
-Copyright (c) 2024 Wazoo Enterprises Inc.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Methodology
+The application was developed using Agile methodology with a focus on good programming practices and MVC architecture.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## Project Structure
+The project follows the standard Spring Boot structure with clear separation between:
+- Controllers
+- Services
+- Repositories
+- Models
+
+<details>
+  <summary>🧮 Testing</summary>
+  <div>
+    <samp>
+      <p align="left">
+        The application uses the following testing approach:
+        <ul>
+            <li>JUnit 5 (Jupiter) for unit and integration testing</li>
+            <li>Spring Boot Test for integration testing</li>
+            <li>Mockito for mocking dependencies</li>
+            <ul>
+                - Tests cover:
+                <li>Context loading</li>
+                <li>CRUD operations for Todo entities</li>
+                <li>Getting all todos</li>
+                <li>Getting a todo by ID</li>
+                <li>Creating a todo</li>
+                <li>Deleting a todo</li>
+            </ul>
+        </ul>
+        <p>Para executar os testes, utilize o seguinte comando no terminal:
+            <code>mvn test</code>
+        </p>
+      </p>
+    </samp>
+  </div>
+</details>
+
+## How to Use
+1. Clone the repository.
+2. Set up environment variables in `.env` file
+3. Run `docker-compose up` to start the database and phpMyAdmin
+4. Run the Spring Boot application using `mvn spring-boot:run`
+5. Access the application at `http://localhost:8080`
+
+<!-- RAINBOW LINE TOP -->
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
+
+<!-- GIF HEADER -->
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/banner-header.gif">
+# spring-boot-3-todo-application

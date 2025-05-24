@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/icon/todoicon.png" />
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}" />
+    <link th:rel="stylesheet" th:href="@{/styles.css}" />
+    <title>Sobre o Projeto</title>
+</head>
+<body style="background-color: var(--ctp-mocha-base); color: var(--ctp-mocha-text);">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--ctp-mocha-mantle);" role="navigation" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/logo/logo.png" alt="Logo" style="max-height: 40px;">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/" style="color: var(--ctp-mocha-subtext1);">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/sobre" aria-current="page" style="color: var(--ctp-mocha-lavender);">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="display-4 mb-4 text-center" style="color: var(--ctp-mocha-lavender);">Sobre o Projeto</h1>
+
+            <section aria-labelledby="tecnologias">
+                <div class="card mb-5" style="background-color: var(--ctp-mocha-mantle); border: 1px solid var(--ctp-mocha-surface0);">
+                    <div class="card-body">
+                        <h2 id="tecnologias" class="card-title h5" style="color: var(--ctp-mocha-lavender);">Tecnologias Utilizadas</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer"
+                                   style="color: var(--ctp-mocha-blue); text-decoration: none;">
+                                   <i class="fas fa-leaf me-2"></i>Spring Boot 3
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="https://www.thymeleaf.org/" target="_blank" rel="noopener noreferrer"
+                                   style="color: var(--ctp-mocha-blue); text-decoration: none;">
+                                   <i class="fas fa-code me-2"></i>Thymeleaf
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noopener noreferrer"
+                                   style="color: var(--ctp-mocha-blue); text-decoration: none;">
+                                   <i class="fab fa-bootstrap me-2"></i>Bootstrap 5
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer"
+                                   style="color: var(--ctp-mocha-blue); text-decoration: none;">
+                                   <i class="fas fa-database me-2"></i>MySQL
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="metodologia">
+                <div class="card mb-5" style="background-color: var(--ctp-mocha-mantle); border: 1px solid var(--ctp-mocha-surface0);">
+                    <div class="card-body">
+                        <h2 id="metodologia" class="card-title h5" style="color: var(--ctp-mocha-lavender);">Metodologia</h2>
+                        <p style="color: var(--ctp-mocha-subtext1);">Desenvolvimento ágil com foco em boas práticas de programação e arquitetura MVC.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="estrutura">
+                <div class="card mb-5" style="background-color: var(--ctp-mocha-mantle); border: 1px solid var(--ctp-mocha-surface0);">
+                    <div class="card-body">
+                        <h2 id="estrutura" class="card-title h5" style="color: var(--ctp-mocha-lavender);">Estrutura do Projeto</h2>
+                        <p style="color: var(--ctp-mocha-subtext1);">O projeto segue a estrutura padrão do Spring Boot com separação clara entre controllers, services e repositories.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="testes">
+                <div class="card mb-5" style="background-color: var(--ctp-mocha-mantle); border: 1px solid var(--ctp-mocha-surface0);">
+                    <div class="card-body">
+                        <h2 id="testes" class="card-title h5" style="color: var(--ctp-mocha-lavender);">Testes</h2>
+                        <p style="color: var(--ctp-mocha-subtext1);">O projeto inclui uma suíte de testes automatizados para garantir a qualidade do código e o funcionamento correto das funcionalidades. Os testes são realizados utilizando o framework JUnit e Mockito para simulação de dependências.</p>
+                        <ul style="color: var(--ctp-mocha-subtext1);">
+                            <li class="mb-2">Testes de Unidade: Verificam o comportamento de classes individuais</li>
+                            <li>Testes de Integração: Avaliam a interação entre diferentes componentes</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="text-center mt-4">
+                <a href="/" class="btn"
+                   style="background-color: var(--ctp-mocha-green); color: var(--ctp-mocha-base);"
+                   aria-label="Voltar para a Página Principal">
+                   Voltar para a Página Principal
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.min.js}"></script>
+</body>
+</html>

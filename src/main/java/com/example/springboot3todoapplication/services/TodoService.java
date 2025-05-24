@@ -1,14 +1,16 @@
 package com.example.springboot3todoapplication.services;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.example.springboot3todoapplication.models.StatusType;
 import com.example.springboot3todoapplication.models.Todo;
 import com.example.springboot3todoapplication.repositories.TodoRepository;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 @Slf4j
@@ -37,5 +39,9 @@ public class TodoService {
         newTodo.setUpdatedAt(LocalDateTime.now());
 
         return todoRepository.save(newTodo);
+    }
+
+    public void deleteById(Long id) {
+        todoRepository.deleteById(id);
     }
 }

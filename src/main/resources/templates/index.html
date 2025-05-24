@@ -2,79 +2,159 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css} " />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To do List</title>
+    <link rel="icon" type="image/png" href="/icon/todoicon.png" />
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}" />
     <link th:rel="stylesheet" th:href="@{/styles.css}" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 </head>
 
-<body>
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <h1>Todo Planner</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-            </ul>
-            <form class="d-flex"
-                  action="#"
-                  th:action="@{/todos/new}"
-                  th:object="${newTodo}"
-                  method="POST"
+<body style="background-color: var(--ctp-mocha-base); color: var(--ctp-mocha-text);">
+    <!-- Navbar principal com navegação e formulário de criação -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: var(--ctp-mocha-mantle);" role="navigation" aria-label="Main navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" aria-label="Página inicial - To do List">
+                <img src="/logo/logo.png" alt="Logo To do List" />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
             >
-                <input class="form-control"
-                       id="description"
-                       name="description"
-                       th:field="*{description}"
-                       placeholder="new todo description"
-                       required
-                       type="text">
-                <button class="btn btn-outline-success" type="submit">Add</button>
-            </form>
-        </div>
-    </div>
-</nav>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm">
-            <h3 class="text-center">Backlog</h3>
-            <ul class="todo-list">
-                <li class="border border-info" th:each="todo : ${backlog}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
-                    <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm">
-            <h3 class="text-center">Doing</h3>
-            <ul class="todo-list">
-                <li class="border border-warning" th:each="todo : ${doing}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
-                    <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
-                </li>
-            </ul>
-        </div>
-        <div class="col-sm">
-            <h3 class="text-center">Done</h3>
-            <ul class="todo-list">
-                <li class="border border-success" th:each="todo : ${done}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
-                    <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
-                </li>
-            </ul>
-        </div>
-    </div>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-</div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre" aria-current="page" style="color: var(--ctp-mocha-subtext1);">Sobre</a>
+                    </li>
+                </ul>
 
-<script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.min.js}"></script>
-<script th:src="@{/app.js}"></script>
+                <!-- Formulário para adicionar nova tarefa -->
+                <form
+                    class="d-flex"
+                    action="#"
+                    th:action="@{/todos/new}"
+                    th:object="${newTodo}"
+                    method="POST"
+                    role="search"
+                    aria-label="Formulário para adicionar nova tarefa"
+                >
+                    <input
+                        class="form-control"
+                        id="description"
+                        name="description"
+                        th:field="*{description}"
+                        placeholder="Descrição da nova tarefa"
+                        required
+                        type="text"
+                        aria-required="true"
+                        style="background-color: var(--ctp-mocha-crust); border-color: var(--ctp-mocha-surface0); color: var(--ctp-mocha-text);"
+                    />
+                    <button
+                        class="btn ms-2"
+                        type="submit"
+                        aria-label="Adicionar nova tarefa"
+                        style="background-color: var(--ctp-mocha-green); color: var(--ctp-mocha-base);"
+                    >
+                        Add
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
+    <main class="container-fluid mt-4" role="main">
+        <div class="row">
+            <!-- Backlog -->
+            <section class="col-sm" aria-labelledby="backlogTitle">
+                <h2 id="backlogTitle" class="text-center mb-3" style="color: var(--ctp-mocha-lavender);">Backlog</h2>
+                <ul class="todo-list list-unstyled">
+                    <li
+                        class="rounded p-2 mb-2 d-flex justify-content-between align-items-center"
+                        th:each="todo : ${backlog}"
+                        th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'"
+                        role="button"
+                        tabindex="0"
+                        aria-pressed="false"
+                        aria-label="Tarefa backlog: [[${todo.description}]]"
+                        style="background-color: var(--ctp-mocha-mantle); border: 1px solid var(--ctp-mocha-lavender);"
+                    >
+                        <span th:text="${todo.description}"></span>
+                        <button
+                            class="btn btn-sm"
+                            type="button"
+                            th:onclick="'javascript:editTodo(' + ${todo.id} + ')'"
+                            aria-label="Editar tarefa"
+                            style="background-color: var(--ctp-mocha-peach); color: var(--ctp-mocha-base);"
+                        >
+                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Doing -->
+            <section class="col-sm" aria-labelledby="doingTitle">
+                <h2 id="doingTitle" class="text-center mb-3" style="color: var(--ctp-mocha-peach);">Doing</h2>
+                <ul class="todo-list list-unstyled">
+                    <li
+                        class="rounded p-2 mb-2"
+                        th:each="todo : ${doing}"
+                        th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'"
+                        role="button"
+                        tabindex="0"
+                        aria-pressed="false"
+                        aria-label="Tarefa em andamento: [[${todo.description}]]"
+                        style="background-color: var(--ctp-mocha-mantle); border: 1px solid var(--ctp-mocha-peach);"
+                    >
+                        <span th:text="${todo.description}"></span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Done -->
+            <section class="col-sm" aria-labelledby="doneTitle">
+                <h2 id="doneTitle" class="text-center mb-3" style="color: var(--ctp-mocha-green);">Done</h2>
+                <ul class="todo-list list-unstyled">
+                    <li
+                        class="rounded p-2 mb-2 d-flex justify-content-between align-items-center"
+                        th:each="todo : ${done}"
+                        aria-label="Tarefa concluída: [[${todo.description}]]"
+                        style="background-color: var(--ctp-mocha-mantle); border: 1px solid var(--ctp-mocha-green);"
+                    >
+                        <span th:text="${todo.description}"></span>
+                        <button
+                            class="btn btn-sm"
+                            type="button"
+                            th:onclick="'javascript:deleteTodo(' + ${todo.id} + ')'"
+                            aria-label="Excluir tarefa"
+                            style="background-color: var(--ctp-mocha-red); color: var(--ctp-mocha-base);"
+                        >
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <script th:src="@{/webjars/jquery/3.7.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.min.js}"></script>
+    <script th:src="@{/app.js}"></script>
 </body>
+
 </html>

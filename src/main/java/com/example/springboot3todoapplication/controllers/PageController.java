@@ -1,21 +1,25 @@
 package com.example.springboot3todoapplication.controllers;
 
-import com.example.springboot3todoapplication.models.StatusType;
-import com.example.springboot3todoapplication.models.Todo;
-import com.example.springboot3todoapplication.services.TodoService;
-import lombok.RequiredArgsConstructor;
+import java.time.Instant;
+import java.time.ZoneId;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.time.Instant;
-import java.time.ZoneId;
+import com.example.springboot3todoapplication.models.StatusType;
+import com.example.springboot3todoapplication.models.Todo;
+import com.example.springboot3todoapplication.services.TodoService;
+
 
 @Controller
-@RequiredArgsConstructor
 public class PageController {
 
-    final TodoService todoService;
+    private final TodoService todoService;
+
+    public PageController(TodoService todoService) {
+        this.todoService = todoService;
+    }
 
     @GetMapping("/")
     public ModelAndView index() {
@@ -27,6 +31,12 @@ public class PageController {
 
         modelAndView.addObject("newTodo", new Todo());
         modelAndView.addObject("today", Instant.now().atZone(ZoneId.systemDefault()).toLocalDate().getDayOfWeek());
+        return modelAndView;
+    }
+
+    @GetMapping("/sobre")
+    public ModelAndView sobre() {
+        ModelAndView modelAndView = new ModelAndView("sobre");
         return modelAndView;
     }
 }
